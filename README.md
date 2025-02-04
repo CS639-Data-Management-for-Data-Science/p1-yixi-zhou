@@ -40,14 +40,23 @@ Then, launch a docker container running MySQL server using this command:
 
 ```bash
 docker run --name <container-name> -d -p 127.0.0.1:3306:3306 -e MYSQL_DATABASE=Chinook -e MYSQL_ROOT_PASSWORD=123456 mysql
+
+docker run --name test -d -p 127.0.0.1:3306:3306 -e MYSQL_DATABASE=Chinook -e MYSQL_ROOT_PASSWORD=123456 mysql
 ```
 
 Now start a new program (`bash`) in the existing docker container using the below docker command:
 
 ```bash
 docker exec -it <container-name> bash
+
+docker exec -it test bash
+
 ```
 You can use this session for your experimentation of the database.
+
+```
+mysql -u root -p
+```
 
 ## Setting up `jupyter` on your VM
 
